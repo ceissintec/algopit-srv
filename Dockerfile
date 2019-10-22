@@ -9,4 +9,5 @@ EXPOSE 3000
 EXPOSE 4000
 RUN prisma generate
 RUN tsc
+RUN chmod +x ./bin/run.sh
 CMD ./bin/run.sh

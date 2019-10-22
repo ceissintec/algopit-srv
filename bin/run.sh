@@ -2,4 +2,5 @@
 #!/bin/sh
 
 prisma deploy --force;
-node ./dist/src/server.js;
+yarn copy-to-dist
+node ../dist/src/server.js;
