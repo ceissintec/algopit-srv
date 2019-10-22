@@ -2,4 +2,4 @@
 #!/bin/sh
 
 prisma deploy --force;
-node dist/server.js;
+node ./dist/src/server.js;
