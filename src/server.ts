@@ -1,5 +1,5 @@
 import { ApolloServer, gql } from 'apollo-server-express';
-import { default as typeDefs } from './api/graphql/typeDefs';
+import { default as typeDefs } from './api/graphql/schemas';
 import { resolvers } from './api/graphql/resolvers';
 import { prisma } from '../generated/prisma-client';
 import express from 'express';

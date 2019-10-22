@@ -1,0 +1,22 @@
+type Query {
+  user(username: String, cfHandle: String): User!
+  users(username: String, cfHandle: String, orderBy: UserOrderByInput): [User!]!
+}
+
+type User {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  firstName: String
+  lastName: String
+  username: String!
+  password: String!
+  email: String!
+  cfHandle: String
+  problems: [Problem!]!
+}
+
+enum UserOrderByInput {
+  username_ASC
+  username_DESC
+}

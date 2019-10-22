@@ -8,6 +8,7 @@
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint . --fix",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "dev-deploy": "npx prisma deploy --force && npx prisma generate",
     "prod": "tsc && node ./dist/server.js"
   },
   "husky": {

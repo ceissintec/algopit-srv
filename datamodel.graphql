@@ -1,9 +1,39 @@
 type User {
   id: ID! @id
-  name: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  firstName: String
+  lastName: String
+  username: String! @unique @required
+  password: String! @required
+  email: String! @unique
+  cfHandle: String
+  problems: [Problem!]!
 }
 
 type Problem {
   id: ID! @id
   name: String!
+  difficulty: Float!
+  judge: String!
+  link: JudgeInput! @default(value: CODEFORCES)
+  solvedBy: [User!]!
+  categories: [Category!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+enum JudgeInput {
+  CODEFORCES
+  SPOJ
+  UVA
+  TIMUS
+  URI
+  ATCODER
+}
+
+type Category {
+  id: ID! @id
+  name: String! @unique
+  problems: [Problem!]!
 }

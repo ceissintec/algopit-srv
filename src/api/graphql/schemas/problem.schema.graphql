@@ -1,0 +1,39 @@
+type Query {
+  problem(name: String): Problem!
+  problems(
+    filter: String
+    skip: Int
+    first: Int
+    orderBy: ProblemOrderByInput
+  ): [Problem!]!
+}
+
+type Problem {
+  id: ID!
+  name: String!
+  difficulty: Float!
+  judge: String!
+  link: String!
+  solvedBy: [User!]!
+  categories: [Category!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+enum JudgeInput {
+  CODEFORCES
+  SPOJ
+  UVA
+  TIMUS
+  URI
+  ATCODER
+}
+
+enum ProblemOrderByInput {
+  name_ASC
+  name_DESC
+  difficulty_ASC
+  difficulty_DESC
+  createdAt_ASC
+  createdAt_DESC
+}

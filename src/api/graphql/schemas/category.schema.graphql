@@ -1,0 +1,15 @@
+type Query {
+  category(name: String): Category!
+  categories(filter: String, orderBy: CategoryOrderByInput): [Category!]!
+}
+
+type Category {
+  id: ID!
+  name: String!
+  problems: [Problem!]!
+}
+
+enum CategoryOrderByInput {
+  name_ASC
+  name_DESC
+}
