@@ -4,6 +4,8 @@ import { resolvers } from './api/graphql/resolvers';
 import { prisma } from '../generated/prisma-client';
 import express from 'express';
 
+require('dotenv').config();
+
 const server = new ApolloServer({
   typeDefs,
   // tslint:disable-next-line: object-literal-sort-keys
