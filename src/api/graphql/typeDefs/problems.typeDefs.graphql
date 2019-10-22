@@ -1,0 +1,9 @@
+type Problem {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  problems: [Problem!]!
+  problem: Problem!
+}
